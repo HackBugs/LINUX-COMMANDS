@@ -1,0 +1,50 @@
+### CMD Linux Terminal Applications and Utilities
+
+#### **Command Line Tools to Monitor Linux Performance**
+- **vmstat** : Monitor system performance (alternative to be searched online)
+
+#### **Graphical User Interface Customization**
+- **GNOME vs KDE** : User interfaces for customizing Linux graphical environment
+
+#### **Command Help**
+- **`--help`** : Display help information for a command
+- **`man`** : Manual pages for commands
+- **`info`** : Documentation for commands
+- **`help`** : Get help for built-in commands
+
+#### **Performance Monitoring and Utilities**
+- **`apt install iptraf`** : Install IP traffic monitoring tool
+- **`glances`** : Show processes and system details
+- **`htop`** : Interactive process viewer
+- **`iotop`** : Monitor I/O usage by processes
+- **`atop`** : Advanced system and process monitor
+- **`bpytop`** : Resource monitoring tool
+
+#### **Terminal Applications**
+- **`eDEX-UI`** : Sci-fi styled terminal emulator
+- **`hollywood`** : Terminal simulation with fancy visual effects
+- **`sneakers`** : Terminal visualization tool
+- **`cmatrix`** : Matrix-style screen saver
+- **`bottom`** : Terminal-based resource monitor
+- **`mc`** : Midnight Commander, a text-based file manager
+
+#### **Games and Fun Utilities**
+- **`asciiquarium`** : ASCII aquarium simulation
+- **`lolcat`** : Add colorful effects to text output
+- **`cmatrix`** : Terminal screensaver with Matrix-like visuals
+- **`ranger`** : Text-based file manager with Vim-like interface
+
+#### **System Information and Storage**
+- **`tokei`** : Show statistics about source code
+- **`pfetch`** : Display system information
+- **`neofetch`** : Show system information with a graphical logo
+
+#### **Disk Usage Analysis**
+- **`ncdu`** : Scan and display disk usage
+
+#### **Multiplexers**
+- **`tmux`** : Terminal multiplexer allowing multiple windows
+
+#### **Process Monitoring**
+- **`ps aux`** : Show all running processes
+- **`procs`** : Process viewer with a modern interface
