@@ -63,6 +63,8 @@ echo "If issues persist, consider reinstalling Cockpit..."
 # sudo apt-get install -y cockpit
 
 echo "Script execution completed."
+
+https://192.168.43.72:9090/
 ```
 
 ### Instructions:
