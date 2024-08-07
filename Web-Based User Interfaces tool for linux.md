@@ -2,6 +2,7 @@
 ## Installation with bash scrip of `cockpit` web based linux server management tool
 
 > Bash script that incorporates all the commands and troubleshooting steps you’ve described:
+- `sudo ufw allow 9090/tcp` - allows firewall traffic on port 9090:
 
 ```bash
 #!/bin/bash
