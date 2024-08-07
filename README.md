@@ -1,5 +1,91 @@
 # LINUX-COMMANDS
 
+Command line tools and terminal applications for various tasks:
+
+### CMD Linux Terminal Applications and Utilities
+
+#### **Command Line Tools to Monitor Linux Performance**
+- **`vmstat`** : Monitor system performance (alternative to be searched online)
+- **`dstat`** : Versatile resource statistics tool
+
+#### **Graphical User Interface Customization**
+- **`lxqt`** : Lightweight Qt desktop environment
+- **`Xfce`** : Lightweight desktop environment
+
+#### **Command Help**
+- **`--help`** : Display help information for a command
+- **`man`** : Manual pages for commands
+- **`info`** : Documentation for commands
+- **`help`** : Get help for built-in commands
+
+#### **Performance Monitoring and Utilities**
+- **`glances`** : Show processes and system details
+- **`htop`** : Interactive process viewer
+- **`iotop`** : Monitor I/O usage by processes
+- **`atop`** : Advanced system and process monitor
+- **`bpytop`** : Resource monitoring tool
+- **`nmon`** : Performance monitoring tool
+- **`sar`** : Collect, report, or save system activity information
+
+#### **Terminal Applications**
+- **`eDEX-UI`** : Sci-fi styled terminal emulator
+- **`hollywood`** : Terminal simulation with fancy visual effects
+- **`sneakers`** : Terminal visualization tool
+- **`cmatrix`** : Matrix-style screen saver
+- **`bottom`** : Terminal-based resource monitor
+- **`mc`** : Midnight Commander, a text-based file manager
+- **`xfce4-terminal`** : Lightweight terminal emulator for Xfce
+- **`terminator`** : Terminal emulator with multiple resizable panes
+
+#### **Games and Fun Utilities**
+- **`asciiquarium`** : ASCII aquarium simulation
+- **`lolcat`** : Add colorful effects to text output
+- **`cmatrix`** : Terminal screensaver with Matrix-like visuals
+- **`ranger`** : Text-based file manager with Vim-like interface
+- **`ninvaders`** : ASCII-based Space Invaders game
+- **`cowsay`** : Display text with a speech bubble from an ASCII cow
+
+#### **System Information and Storage**
+- **`tokei`** : Show statistics about source code
+- **`pfetch`** : Display system information
+- **`neofetch`** : Show system information with a graphical logo
+- **`screenfetch`** : Display system information with a logo
+- **`inxi`** : Comprehensive system information tool
+
+#### **Disk Usage Analysis**
+- **`ncdu`** : Scan and display disk usage
+- **`du`** : Disk usage of files and directories
+- **`baobab`** : Disk usage analyzer with a graphical interface
+
+#### **Multiplexers**
+- **`tmux`** : Terminal multiplexer allowing multiple windows
+- **`screen`** : Terminal multiplexer for managing multiple terminal sessions
+
+#### **Process Monitoring**
+- **`ps aux`** : Show all running processes
+- **`procs`** : Process viewer with a modern interface
+- **`pstree`** : Show processes as a tree
+- **`pgrep`** : Look up processes based on name and other attributes
+
+#### **Networking**
+- **`nmap`** : Network exploration and security auditing tool
+- **`tcpdump`** : Network packet analyzer
+- **`netcat`** : Network utility for reading from and writing to network connections
+
+#### **File Transfer and Synchronization**
+- **`scp`** : Securely copy files between hosts
+- **`rsync`** : Synchronize files and directories between two locations
+- **`ftp`** : File transfer protocol client
+
+#### **Text Processing**
+- **`awk`** : Text processing and pattern scanning
+- **`sed`** : Stream editor for filtering and transforming text
+- **`grep`** : Search text using patterns
+
+These tools cover a range of functionalities from system monitoring and management to file transfer and text processing. Feel free to explore and use them as needed!
+
+<hr>
+
 Certainly! Here’s the list of commands formatted in code boxes:
 
 ```sh
