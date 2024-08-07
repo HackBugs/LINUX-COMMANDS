@@ -1,5 +1,5 @@
 
-## Install with bash scrip of this tool
+## Installation with bash scrip of cockpit web based linux server management tool
 
 > Bash script that incorporates all the commands and troubleshooting steps you’ve described:
 
