@@ -1,8 +1,18 @@
 
+```sh
+`sudo ufw allow 9090/tcp` - allows firewall traffic on port 9090:
+cmd - netstat and ss and
+cmd - sudo ethtool enp0s3
+./prometheus --web.listen-address=":9043" &
+sudo ufw status
+sudo ufw allow 9043/tcp
+```
+
+<hr>
+
 ## Installation with bash scrip of `cockpit` web based linux server management tool
 
 > Bash script that incorporates all the commands and troubleshooting steps you’ve described:
-- `sudo ufw allow 9090/tcp` - allows firewall traffic on port 9090:
 
 ```bash
 #!/bin/bash
