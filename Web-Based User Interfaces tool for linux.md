@@ -1,3 +1,88 @@
+
+## Install with bash scrip of this tool
+
+> Bash script that incorporates all the commands and troubleshooting steps you’ve described:
+
+```bash
+#!/bin/bash
+
+# Update package lists
+echo "Updating package lists..."
+sudo apt update
+
+# Install Cockpit
+echo "Installing Cockpit..."
+sudo apt install -y cockpit
+
+# Start and enable Cockpit service
+echo "Starting and enabling Cockpit service..."
+sudo systemctl start cockpit
+sudo systemctl enable cockpit
+
+# Check the status of Cockpit service
+echo "Checking the status of Cockpit service..."
+sudo systemctl status cockpit
+
+# Check the status of Cockpit socket
+echo "Checking the status of Cockpit socket..."
+sudo systemctl status cockpit.socket
+
+# Start and enable Cockpit socket if inactive
+echo "Starting and enabling Cockpit socket..."
+sudo systemctl start cockpit.socket
+sudo systemctl enable cockpit.socket
+
+# Check logs for errors
+echo "Checking logs for Cockpit..."
+sudo journalctl -u cockpit
+sudo journalctl -u cockpit.socket
+
+# Restart Cockpit service and socket
+echo "Restarting Cockpit service and socket..."
+sudo systemctl restart cockpit
+sudo systemctl restart cockpit.socket
+
+# Verify if Cockpit is listening on port 9090
+echo "Checking if Cockpit is listening on port 9090..."
+sudo ss -tuln | grep 9090
+# Alternatively, use netstat if ss is not available
+sudo netstat -tuln | grep 9090
+
+# Check and update firewall rules
+echo "Checking and updating firewall rules..."
+sudo ufw allow 9090/tcp
+
+# Review configuration files (manual check recommended)
+echo "Reviewing Cockpit configuration files (manual check recommended)."
+echo "Configuration files can be found in /etc/cockpit."
+
+# Reinstall Cockpit if necessary
+echo "If issues persist, consider reinstalling Cockpit..."
+# Uncomment the lines below to remove and reinstall Cockpit
+# sudo apt-get remove --purge cockpit
+# sudo apt-get install -y cockpit
+
+echo "Script execution completed."
+```
+
+### Instructions:
+1. Save the script to a file, e.g., `setup_cockpit.sh`.
+2. Make the script executable:
+
+   ```bash
+   chmod +x setup_cockpit.sh
+   ```
+
+3. Run the script:
+
+   ```bash
+   ./setup_cockpit.sh
+   ```
+
+This script will help automate the installation and troubleshooting process for Cockpit on your Ubuntu server.
+
+<hr>
+
 Ubuntu server without a graphical interface and want to install lightweight software that provides a graphical interface, you can consider the following options:
 
 ### 1. **Web-Based User Interfaces**
