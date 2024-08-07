@@ -1,5 +1,41 @@
 # LINUX-COMMANDS
 
+> Important Linux cmds for cloud Engineer check internet & Network port connection info:
+
+- netstaat --help - `use this to know what you have requred to check`
+- netstat - `Troubleshoot Network Issues`
+   - netstat -putan | grep :8080 - `check what is running on this port`
+   - netstat more
+   - netstat -at | more - `for TCP connection`
+   - netstat -au | more - `for UDP connection`
+   - netstat -atlnp | more - `check also what programm is runnig on port`
+   - netstat -r - `routing table information`
+```sh
+ -r, --route              display routing table
+        -i, --interfaces         display interface table
+        -g, --groups             display multicast group memberships
+        -s, --statistics         display networking statistics (like SNMP)
+        -M, --masquerade         display masqueraded connections
+
+        -v, --verbose            be verbose
+        -W, --wide               don't truncate IP addresses
+        -n, --numeric            don't resolve names
+        --numeric-hosts          don't resolve host names
+        --numeric-ports          don't resolve port names
+        --numeric-users          don't resolve user names
+        -N, --symbolic           resolve hardware names
+        -e, --extend             display other/more information
+        -p, --programs           display PID/Program name for sockets
+        -o, --timers             display timers
+        -c, --continuous         continuous listing
+
+        -l, --listening          display listening server sockets
+        -a, --all                display all sockets (default: connected)
+        -F, --fib                display Forwarding Information Base (default)
+        -C, --cache              display routing cache instead of FIB
+        -Z, --context            display SELinux security context for sockets
+```
+- vmstat -
 
 > list of commands formatted in code boxes:
 
