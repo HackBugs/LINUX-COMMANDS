@@ -3,7 +3,7 @@
 Certainly! Here’s the list of commands formatted in code boxes:
 
 ```sh
-# System Monitoring and Performance
+# System Monitoring and Performance --------------------------------
 
 # Real-time system processes and resource usage
 top
@@ -23,7 +23,7 @@ free -h
 # Collects, reports, or saves system activity information (requires `sysstat` package)
 sar -u 1 3
 
-# Disk Usage and Management
+# Disk Usage and Management -----------------------------------
 
 # Reports disk space usage
 df -h
@@ -40,7 +40,7 @@ sudo fdisk -l
 # A more advanced partitioning tool
 sudo parted /dev/sdX
 
-# Network Configuration and Troubleshooting
+# Network Configuration and Troubleshooting ----------------------------------
 
 # Configures network interfaces (deprecated, replaced by `ip`)
 ifconfig
@@ -66,7 +66,7 @@ nslookup example.com
 # Performs DNS lookups
 dig example.com
 
-# System Services and Processes
+# System Services and Processes ----------------------------------------
 
 # Manages system services and the system state
 systemctl status service-name
@@ -80,7 +80,7 @@ ps aux
 # Shows real-time system processes and resource usage
 top
 
-# File System and Disk Operations
+# File System and Disk Operations ------------------------------------------------
 
 # Mounts file systems
 mount /dev/sdXn /mnt/mountpoint
@@ -100,7 +100,7 @@ find /path -name filename
 # Searches for patterns within files
 grep 'pattern' file
 
-# User and Group Management
+# User and Group Management -----------------------------------
 
 # Adds a new user
 sudo useradd username
@@ -114,7 +114,7 @@ sudo passwd username
 # Adds a new group
 sudo groupadd groupname
 
-# Security and Logs
+# Security and Logs ---------------------------------------------------
 
 # Uncomplicated Firewall, used to manage firewall rules
 sudo ufw status
@@ -128,7 +128,7 @@ journalctl -xe
 # Prints kernel ring buffer messages
 dmesg | less
 
-# Backup and Recovery
+# Backup and Recovery ------------------------------------------------
 
 # Synchronizes files and directories between two locations
 rsync -av source/ destination/
@@ -139,7 +139,7 @@ tar -czvf archive.tar.gz /path/to/directory
 # Converts and copies files (useful for disk cloning)
 dd if=/dev/sdX of=/path/to/backup.img bs=4M
 
-# System Information
+# System Information -------------------------------------------
 
 # Displays system information
 uname -a
