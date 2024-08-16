@@ -1,5 +1,20 @@
 # Create Colorfull Terminal
 
+```sh
+Explorer.exe .
+gedit
+Nautilus
+Dolphin
+Thunar
+Pcmanfm
+```
+Ps aux | grep nautilus
+```sh
+Install Nextcloud
+Install chromium also
+chromium --no-sandbox
+```
+
 <hr>
 
 > ## Edit Inside this file
