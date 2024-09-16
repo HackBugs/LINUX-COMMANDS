@@ -180,3 +180,67 @@ sudo lsof -i -P -n
 - **PID/Program name**: The process ID and the name of the program using the port.
 
 You can use any of these commands to list all ports that are currently in use on your Ubuntu system.
+
+<hr>
+
+To see the status of services on your system, including active, inactive, and failed services, you can use the `systemctl` command with various options:
+
+### 1. Show All Services
+
+To list all services, both active and inactive:
+
+```bash
+systemctl list-units --type=service
+```
+
+### 2. Show Active Services
+
+To see only the active services:
+
+```bash
+systemctl list-units --type=service --state=active
+```
+
+### 3. Show Inactive Services
+
+To view the services that are not currently running:
+
+```bash
+systemctl list-units --type=service --state=inactive
+```
+
+### 4. Show Failed Services
+
+To check which services have failed:
+
+```bash
+systemctl list-units --type=service --state=failed
+```
+
+### 5. Show All Services with Status Information
+
+To get detailed status information for all services (active, inactive, and failed):
+
+```bash
+systemctl --all --type=service
+```
+
+### 6. Filter Specific Service Status
+
+If you want to see the status of a specific service, you can use:
+
+```bash
+systemctl status <service_name>
+```
+
+Replace `<service_name>` with the name of the service you want to check, such as `nginx`, `apache2`, etc. 
+
+### Example
+
+- To check the status of the `ssh` service:
+
+```bash
+systemctl status ssh
+``` 
+
+This will give you detailed information about whether the service is active, inactive, or failed, along with logs and other status details.
