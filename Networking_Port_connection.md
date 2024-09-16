@@ -243,4 +243,16 @@ Replace `<service_name>` with the name of the service you want to check, such as
 systemctl status ssh
 ``` 
 
+### 7. To see only the actively running services
+
+To see only the actively running services (active and running programs) on your system using `systemctl`, you can use the following command:
+
+```bash
+systemctl list-units --type=service --state=running
+```
+
+This command filters and displays only the services that are currently active and in a running state.
+
 This will give you detailed information about whether the service is active, inactive, or failed, along with logs and other status details.
+
+
