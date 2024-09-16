@@ -129,3 +129,54 @@ If you want to see all installed programs (not just services), you need to use p
 - **Package Managers**: Use commands like `dpkg --list`, `rpm -qa`, `dnf list installed`, or `pacman -Q` to list installed programs.
 
 This approach will help you manage both services and installed programs on your system.
+
+<hr>
+
+To see all the ports currently in use on your Ubuntu system, you can use the `netstat`, `ss`, or `lsof` commands. Here are different ways to check all busy ports:
+
+### Using `ss` Command
+
+`ss` is a modern replacement for `netstat` and provides detailed information about ports in use.
+
+```bash
+sudo ss -tulnp
+```
+
+- `-t`: Show TCP ports.
+- `-u`: Show UDP ports.
+- `-l`: Show only listening ports.
+- `-n`: Show numerical addresses instead of resolving hostnames.
+- `-p`: Show the process using the port.
+
+### Using `netstat` Command
+
+If `netstat` is installed on your system, you can use it to view all busy ports.
+
+```bash
+sudo netstat -tulnp
+```
+
+- `-t`: Show TCP ports.
+- `-u`: Show UDP ports.
+- `-l`: Show only listening ports.
+- `-n`: Show numerical addresses.
+- `-p`: Show the process using the port.
+
+### Using `lsof` Command
+
+`lsof` lists open files and the ports associated with them.
+
+```bash
+sudo lsof -i -P -n
+```
+
+- `-i`: Show network files.
+- `-P`: Don't convert port numbers to names.
+- `-n`: Don't resolve hostnames.
+
+### Interpreting the Output
+
+- **Local Address**: Shows IP and port (`*:80` means all IPs on port `80`).
+- **PID/Program name**: The process ID and the name of the program using the port.
+
+You can use any of these commands to list all ports that are currently in use on your Ubuntu system.
