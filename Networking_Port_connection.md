@@ -255,4 +255,126 @@ This command filters and displays only the services that are currently active an
 
 This will give you detailed information about whether the service is active, inactive, or failed, along with logs and other status details.
 
+<hr>
+
+To see all the ports currently in use on your Ubuntu system, you can use the `netstat`, `ss`, or `lsof` commands. Here are different ways to check all busy ports:
+
+### Using `ss` Command
+
+`ss` is a modern replacement for `netstat` and provides detailed information about ports in use.
+
+```bash
+sudo ss -tulnp
+```
+
+- `-t`: Show TCP ports.
+- `-u`: Show UDP ports.
+- `-l`: Show only listening ports.
+- `-n`: Show numerical addresses instead of resolving hostnames.
+- `-p`: Show the process using the port.
+
+### Using `netstat` Command
+
+If `netstat` is installed on your system, you can use it to view all busy ports.
+
+```bash
+sudo netstat -tulnp
+```
+
+- `-t`: Show TCP ports.
+- `-u`: Show UDP ports.
+- `-l`: Show only listening ports.
+- `-n`: Show numerical addresses.
+- `-p`: Show the process using the port.
+
+### Using `lsof` Command
+
+`lsof` lists open files and the ports associated with them.
+
+```bash
+sudo lsof -i -P -n
+```
+
+- `-i`: Show network files.
+- `-P`: Don't convert port numbers to names.
+- `-n`: Don't resolve hostnames.
+
+### Interpreting the Output
+
+- **Local Address**: Shows IP and port (`*:80` means all IPs on port `80`).
+- **PID/Program name**: The process ID and the name of the program using the port.
+
+You can use any of these commands to list all ports that are currently in use on your Ubuntu system.
+
+<hr>
+
+To see the status of services on your system, including active, inactive, and failed services, you can use the `systemctl` command with various options:
+
+### 1. Show All Services
+
+To list all services, both active and inactive:
+
+```bash
+systemctl list-units --type=service
+```
+
+### 2. Show Active Services
+
+To see only the active services:
+
+```bash
+systemctl list-units --type=service --state=active
+```
+
+### 3. Show Inactive Services
+
+To view the services that are not currently running:
+
+```bash
+systemctl list-units --type=service --state=inactive
+```
+
+### 4. Show Failed Services
+
+To check which services have failed:
+
+```bash
+systemctl list-units --type=service --state=failed
+```
+
+### 5. Show All Services with Status Information
+
+To get detailed status information for all services (active, inactive, and failed):
+
+```bash
+systemctl --all --type=service
+```
+
+### 6. Filter Specific Service Status
+
+If you want to see the status of a specific service, you can use:
+
+```bash
+systemctl status <service_name>
+```
+
+Replace `<service_name>` with the name of the service you want to check, such as `nginx`, `apache2`, etc. 
+
+### Example
+
+- To check the status of the `ssh` service:
+
+```bash
+systemctl status ssh
+```
+
+### 7. To see only the actively running services (active and running programs) on your system using `systemctl`, you can use the following command:
+
+```bash
+systemctl list-units --type=service --state=running
+```
+
+This command filters and displays only the services that are currently active and in a running state.
+
+This will give you detailed information about whether the service is active, inactive, or failed, along with logs and other status details.
 
