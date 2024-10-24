@@ -1,3 +1,12 @@
+## All packages list count
+```
+apt list | wc -l
+```
+
+## How many packages installed 
+```
+dpkg -l | wc -l
+```
 
 ```sh
 Check which program is running this port
