@@ -282,3 +282,160 @@ sudo pvremove /dev/sdX
 - If the system is protected by GRUB password protection, you’ll need the GRUB password to edit the boot parameters.
 - Ensure to follow security protocols when performing password recovery to maintain the system’s integrity.
 
+------------
+
+
+> ### Q3: What are the steps to extend a mounted logical volume in LVM without any downtime?
+
+1. **Check Free Space**: Ensure you have free space available in the volume group.
+   ```bash
+   vgdisplay vg_name
+   ```
+
+2. **Extend the Logical Volume**: Use `lvextend` to expand the logical volume while it’s mounted.
+   ```bash
+   lvextend -r -l +100%FREE /dev/vg_name/lv_name
+   ```
+   - The `-r` option resizes the filesystem automatically, so you don’t need to unmount the volume.
+
+3. **Resize Filesystem (if needed)**: If the `-r` option is not available, manually resize the filesystem:
+   - For `ext4`:
+     ```bash
+     resize2fs /dev/vg_name/lv_name
+     ```
+   - For `xfs`:
+     ```bash
+     xfs_growfs /dev/vg_name/lv_name
+     ```
+
+This allows you to extend the logical volume without any downtime.
+
+---
+
+> ### Q4: Describe how you would find which process is using the most CPU or memory on a system. Which tools would you use?
+
+1. **Using `top`**:
+   - Run `top` and check the `%CPU` and `%MEM` columns to identify the processes using the most CPU and memory.
+   
+2. **Using `htop`**:
+   - `htop` provides an interactive view with sortable columns. Use it to check resource usage by sorting processes by CPU or memory usage.
+
+3. **Using `ps`**:
+   - To get a list of processes using the most CPU:
+     ```bash
+     ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
+     ```
+   - To get a list of processes using the most memory:
+     ```bash
+     ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+     ```
+
+4. **Using `vmstat` and `iostat`**:
+   - `vmstat` and `iostat` provide information on CPU, memory, and I/O usage for a system overview.
+
+These tools help you monitor and troubleshoot CPU and memory usage effectively.
+
+---
+
+> ### Q5: Explain how to schedule regular backups using cron jobs. What are the different fields in a cron schedule?
+
+1. **Create a Backup Script**: Write a script that performs the backup, e.g., `backup.sh`.
+
+2. **Edit the Crontab**:
+   - Open the crontab editor:
+     ```bash
+     crontab -e
+     ```
+
+3. **Add a Cron Job**: Add an entry specifying the time and frequency for the backup.
+   ```bash
+   0 2 * * * /path/to/backup.sh
+   ```
+   - This example runs the backup at 2:00 AM every day.
+
+4. **Cron Schedule Fields**:
+   - A cron schedule has five fields:
+     - **Minute** (0–59)
+     - **Hour** (0–23)
+     - **Day of Month** (1–31)
+     - **Month** (1–12)
+     - **Day of Week** (0–7, where 0 and 7 are Sunday)
+   - Each field can be a specific value, a range, a list, or use `*` to match any value.
+
+Using cron jobs for backups ensures they run automatically on a defined schedule.
+
+---
+
+> ### Q6: How would you upgrade or patch a Linux system while ensuring minimum downtime?
+
+1. **Plan and Schedule the Update**: Choose a low-traffic time for the upgrade and inform users if necessary.
+
+2. **Check Available Updates**:
+   ```bash
+   sudo apt update && sudo apt list --upgradable
+   ```
+
+3. **Use Rolling Updates or Live Patching** (for critical servers):
+   - Some Linux distributions offer live patching tools, like Canonical’s **Livepatch** for Ubuntu or **kpatch** for RHEL.
+
+4. **Apply Updates**:
+   - For regular updates:
+     ```bash
+     sudo apt upgrade -y   # for Debian-based systems
+     sudo yum update -y    # for RHEL-based systems
+     ```
+   
+5. **Minimize Downtime**:
+   - Perform a **reboot** only if necessary. Minor updates generally don’t require it, but kernel updates may.
+   - For servers requiring constant availability, use **clustering** or **load balancers** to reroute traffic during the update.
+
+This approach helps you update systems with minimal impact on availability.
+
+---
+
+> ### Q7: What steps do you take to harden a Linux system for security purposes? Name some specific files or configurations you would modify.
+
+1. **Update System Regularly**: Ensure all packages and the kernel are up-to-date.
+
+2. **Configure Firewall**:
+   - Set up a firewall like `ufw` or `iptables` to allow only necessary ports.
+   - Example:
+     ```bash
+     sudo ufw allow ssh
+     sudo ufw enable
+     ```
+
+3. **Disable Root Login via SSH**:
+   - Edit `/etc/ssh/sshd_config` and set:
+     ```bash
+     PermitRootLogin no
+     ```
+
+4. **Use SSH Key Authentication**:
+   - Disable password-based authentication in `/etc/ssh/sshd_config`:
+     ```bash
+     PasswordAuthentication no
+     ```
+
+5. **Set Up Intrusion Detection**:
+   - Install and configure tools like `Fail2ban` and `AIDE` to detect suspicious login attempts and file changes.
+
+6. **Limit User Privileges**:
+   - Use `sudo` for privilege management and assign minimal permissions required for each user.
+
+7. **Configure System Logging**:
+   - Ensure logging is set up for audit purposes. Configure `/etc/rsyslog.conf` to log security events.
+
+8. **Secure Sensitive Files**:
+   - Restrict permissions for critical files like `/etc/passwd`, `/etc/shadow`, and `/etc/hosts.allow`.
+
+9. **Disable Unused Services**:
+   - Disable unnecessary services using:
+     ```bash
+     sudo systemctl disable service_name
+     ```
+
+10. **Enable SELinux or AppArmor**:
+    - Use SELinux (on RHEL-based systems) or AppArmor (on Debian-based systems) to enforce mandatory access control.
+
+Hardening these aspects of the system helps reduce attack surfaces and improves system security.
