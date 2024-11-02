@@ -65,7 +65,7 @@ These questions focus on advanced topics in Linux administration that require ha
 
 ------
 
-> ## **LVM** stands for **Logical Volume Manager**. It is a tool used in Linux-based systems for managing disk storage. LVM allows for flexible management of storage by abstracting the physical layout of the storage devices, making it easier to resize, add, or remove storage volumes without downtime.
+>  ## Q -1 **LVM** stands for **Logical Volume Manager**. It is a tool used in Linux-based systems for managing disk storage. LVM allows for flexible management of storage by abstracting the physical layout of the storage devices, making it easier to resize, add, or remove storage volumes without downtime.
 
 ### Key Concepts of LVM:
 
@@ -159,7 +159,7 @@ LVM is a powerful tool, especially in environments where you need flexible, effi
 
 ------
 
-> ## command list covering all essential LVM tasks, from setting up physical volumes to managing logical volumes:
+> ## Q - 1 command list covering all essential LVM tasks, from setting up physical volumes to managing logical volumes:
 
 ```bash
 # 1. Initialize a disk as a Physical Volume (PV)
@@ -212,4 +212,73 @@ sudo pvremove /dev/sdX
 ### Key Notes:
 - **Replace placeholders** (`/dev/sdX`, `my_volume_group`, `my_logical_volume`) with actual names used in your setup.
 - Always ensure you have backups before modifying storage configurations, especially when resizing or removing volumes.
+
+----------
+
+> ### Q - 2 To recover the root password on a Linux system, you can follow these steps. This process involves booting into single-user mode or emergency mode, which allows you to access the system as a superuser without requiring a password. Here’s a detailed guide on how to do it:
+
+---
+
+### Steps to Recover the Root Password on a Linux System
+
+1. **Reboot the System**:
+   - Restart your system, and during boot, press the appropriate key (usually `Esc`, `Shift`, or `E`) to access the GRUB boot menu.
+
+2. **Edit the GRUB Entry**:
+   - In the GRUB menu, use the arrow keys to highlight the default boot option (usually the first one).
+   - Press `e` to edit the selected boot entry.
+
+3. **Modify the Boot Parameters**:
+   - Locate the line that starts with `linux` and ends with `quiet` or `rhgb quiet`.
+   - Delete `quiet` and `rhgb` if they’re present, and replace them with `rw init=/bin/bash` (or `init=/bin/sh` on some distributions).
+   - This change tells the system to boot directly into a shell without loading all other services.
+
+   Example:
+   ```bash
+   linux /boot/vmlinuz-xxxx root=UUID=xxxx ro quiet splash
+   ```
+   Change to:
+   ```bash
+   linux /boot/vmlinuz-xxxx root=UUID=xxxx rw init=/bin/bash
+   ```
+
+4. **Boot into Single-User Mode**:
+   - After making the changes, press `Ctrl + X` or `F10` to boot with the modified entry.
+
+5. **Remount the Root Filesystem**:
+   - Once you’re in single-user mode, the filesystem is mounted as read-only by default. You need to remount it as read-write to make changes.
+   - Run the following command:
+     ```bash
+     mount -o remount,rw /
+     ```
+
+6. **Change the Root Password**:
+   - Now, set a new root password with the `passwd` command:
+     ```bash
+     passwd root
+     ```
+   - Enter the new password when prompted, and confirm it.
+
+7. **Reboot the System**:
+   - Remount the filesystem as read-only again and reboot:
+     ```bash
+     mount -o remount,ro /
+     exec /sbin/reboot
+     ```
+   - The system will now reboot with the updated root password.
+
+---
+
+### Summary of Commands
+1. **Edit GRUB entry**: `linux /boot/vmlinuz-xxxx root=UUID=xxxx rw init=/bin/bash`
+2. **Remount root filesystem**: `mount -o remount,rw /`
+3. **Set new root password**: `passwd root`
+4. **Reboot system**: `exec /sbin/reboot`
+
+---
+
+### Important Notes
+- This recovery process requires physical or console access to the system.
+- If the system is protected by GRUB password protection, you’ll need the GRUB password to edit the boot parameters.
+- Ensure to follow security protocols when performing password recovery to maintain the system’s integrity.
 
