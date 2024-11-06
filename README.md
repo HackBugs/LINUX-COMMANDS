@@ -9,7 +9,7 @@ dpkg -l | wc -l
 ```
 
 ```sh
-Check which program is running this port
+Check which program is using this port
 sudo lsof -i :9043
 sudo netstat -tulnp | grep 9043
 sudo ss -tulnp | grep 9043
