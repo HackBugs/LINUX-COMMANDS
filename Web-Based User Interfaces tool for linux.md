@@ -14,6 +14,9 @@ sudo ufw status
 sudo ufw allow 9043/tcp
 ```
 
+### Monitoring tool
+1. zabbix linux monitoring tool
+
 <hr>
 
 ## Installation with bash scrip of `cockpit` web based linux server management tool
