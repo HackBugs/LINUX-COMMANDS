@@ -1,3 +1,12 @@
+```
+DHCP IP-ADDRESS For Red Hat ya Oracle Linux
+systemctl restart NetworkManager
+nmtui
+cd /etc/sysconfig/network-scripts/
+ls ifcfg-*
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+```
+
 ## All packages list count
 ```
 apt list | wc -l
