@@ -10,6 +10,16 @@ echo -e "\e[1;36m██║  ██║██║  ██║╚██████�
 echo -e "\e[1;31m╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝╚══════╝\e[0m"
 echo -e "\e[1;32mWelcome to HACKBUGS! Let's break things and fix them! 🚀\e[0m"
 ```
+```
+# Colorful Welcome Message for Shahnwaz
+echo -e "\e[1;32m███████╗██╗  ██╗ █████╗ ██╗  ██╗███╗   ██╗██╗    ██╗ █████╗ ███████╗\e[0m"
+echo -e "\e[1;33m██╔════╝██║  ██║██╔══██╗██║  ██║████╗  ██║██║    ██║██╔══██╗╚══███╔╝\e[0m"
+echo -e "\e[1;34m███████╗███████║███████║███████║██╔██╗ ██║██║ █╗ ██║███████║  ███╔╝ \e[0m"
+echo -e "\e[1;35m╚════██║██╔══██║██╔══██║██╔══██║██║╚██╗██║██║███╗██║██╔══██║ ███╔╝  \e[0m"
+echo -e "\e[1;36m███████║██║  ██║██║  ██║██║  ██║██║ ╚████║╚███╔███╔╝██║  ██║███████╗\e[0m"
+echo -e "\e[1;31m╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝\e[0m"
+echo -e "\e[1;32mWelcome, Shahnwaz! Kuchh New Sikho bhai, be Update always! 🚀\e[0m"
+```
 
 ### Steps to add this to your `.bashrc`:
 1. Open your `.bashrc` file in a text editor:
