@@ -329,3 +329,135 @@ sudo mount /dev/sdb1 /mnt
 ├── usr       → User programs/docs
 └── var       → Logs, cache, etc.
 ```
+
+<hr>
+
+> # Interview Preparation
+
+**Linux Administrator Interview Preparation Guide (Layman + Real-World)**
+
+---
+
+### ✅ 1. **Manage all installed systems and infrastructure**
+
+**Matlab:** Har installed Linux server ka dhyaan rakhna - install, configure, test, aur maintain karna.
+
+**Commands & Examples:**
+
+* Install Ubuntu: Boot ISO se install karte hain
+* Set Hostname: `sudo hostnamectl set-hostname server1`
+* Configure static IP: `/etc/netplan/*.yaml` file edit karo
+* Check system uptime: `uptime`
+* Check kernel version: `uname -r`
+
+---
+
+### ✅ 2. **Monitor system performance and manage resources (CPU, Disk, Network)**
+
+**Matlab:** System ka health check karna aur resource ka use control me rakhna.
+
+**Commands:**
+
+* CPU usage: `top`, `htop`
+* Memory check: `free -h`
+* Disk usage: `df -h`, `du -sh *`
+* Network usage: `nload`, `iftop`, `ip -s link`
+
+**Example:**
+Jab server slow lage, `top` se check karo kaun sa process CPU zyada le raha hai.
+
+---
+
+### ✅ 3. **Troubleshoot issues (hardware, OS, applications)**
+
+**Matlab:** Jab kuch kaam na kare to uska reason dhoondhna aur fix karna.
+
+**Tools & Commands:**
+
+* Logs dekhne ke liye: `journalctl`, `dmesg`, `/var/log/syslog`
+* Check disk health: `smartctl -a /dev/sda`
+* Check services: `systemctl status nginx`
+
+**Example:**
+Agar website down hai, `systemctl status nginx` se check karo nginx chalu hai ya nahi.
+
+---
+
+### ✅ 4. **Handle system upgrades, backups, and patching**
+
+**Matlab:** Server ko update rakhna, backup lena, aur security patch lagana.
+
+**Commands:**
+
+* Ubuntu update: `sudo apt update && sudo apt upgrade`
+* Backup files: `rsync -av /data /backup/`
+* Schedule via cron: `crontab -e`
+* Check installed packages: `dpkg -l`, `yum list installed`
+
+**Example:**
+Daily 2am pe backup chahiye to cron job banate hain.
+
+---
+
+### ✅ 5. **Provide technical support to team members**
+
+**Matlab:** Team ke logon ko help karna jab unka server, access, ya software me problem aaye.
+
+**Real Tasks:**
+
+* User ka password reset: `passwd username`
+* User ko sudo dena: `usermod -aG sudo username`
+* Mount drive: `mount /dev/sdb1 /mnt`
+
+---
+
+### ✅ 6. **Ensure system security (firewall, IDS)**
+
+**Matlab:** Server secure ho, unauthorized access na ho.
+
+**Commands & Tools:**
+
+* UFW enable: `sudo ufw enable`
+* Allow port: `sudo ufw allow 22`
+* Disable root SSH login: `/etc/ssh/sshd_config`
+* Fail2ban (brute force stop): `sudo apt install fail2ban`
+
+**Example:**
+Sirf SSH port open rakhna hai to `ufw allow 22/tcp`
+
+---
+
+### ✅ 7. **Shell Scripting & Automation**
+
+**Matlab:** Daily kaam manually na karke script likh lo jo automatically chale.
+
+**Example Script:**
+
+```bash
+#!/bin/bash
+# Daily backup script
+rsync -av /var/www/ /backup/www_$(date +%F)
+```
+
+**Schedule it:**
+
+```bash
+crontab -e
+0 2 * * * /home/user/scripts/backup.sh
+```
+
+---
+
+### 🌟 BONUS: Real-Time Tools to Mention
+
+* Monitoring: `top`, `htop`, `nmon`
+* Logs: `journalctl`, `syslog`, `dmesg`
+* Backup: `rsync`, `scp`, `tar`
+* Security: `ufw`, `iptables`, `fail2ban`
+* Scripting: `bash`, `cron`
+
+---
+
+
+
+
