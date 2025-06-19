@@ -25,8 +25,7 @@
 
 <hr>
 
-Bilkul bhai! 👌
-Chalo ab mai aapko **Linux Root Directory Structure** ko **details me + real-life example** ke saath samjhata hoon — simple Hinglish me, jaise aap kisi dost ko samjha rahe ho. 😄
+**Linux Root Directory Structure** ko **details me + real-life example**
 
 ---
 
